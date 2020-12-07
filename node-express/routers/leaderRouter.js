@@ -19,6 +19,7 @@ leaderRouter.route("/")
     res.end("Adding the new leader with name: " + req.body.name + " and details: " + req.body.description);
 })
 .put((req, res, next) => {
+    res.statusCode = 403;
     res.end("PUT operation not supported on /leaders");
 })
 .delete((req, res, next) => {
@@ -32,6 +33,7 @@ leaderRouter.route("/:leaderId")
     res.end("Will send the details of the leader: " + req.params.leaderId);
 })
 .post((req, res, next) => {
+    res.statusCode = 403;
     res.end("POST not supported on /leaders/" + req.params.leaderId);
 })
 .put((req, res, next) => {
